@@ -1,0 +1,19 @@
+sources:
+  - name: weather_source
+    database: weather_db
+    schema: schema_weather
+    tables:
+      - name: weather_api_data
+        description: "Raw weather data fetched from weather API"
+        
+        columns:
+          - name: unique_key
+            description: unique identifier for rows
+            data_tests:
+              - not_null
+  - name: health_care
+    database: weather_db
+    schema: schema_weather
+    tables:
+      - name: healthcare_data
+        description: "raw data for health care"

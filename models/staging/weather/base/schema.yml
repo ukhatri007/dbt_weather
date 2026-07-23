@@ -1,0 +1,164 @@
+models:
+  - name: base_weather_api_data
+    description: Is a view that holds weather api data.
+    columns:
+      - name: unique_key
+        description: Unique identifier for each row of data.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:  
+                to: source('weather_source','weather_api_data')
+                field: unique_key
+
+
+      - name: base
+        description: Name where the data is collected at.
+        data_tests:
+          - not_null
+
+      - name: id
+        description: Identifier given to row by weather api
+        data_tests:
+          - not_null
+
+      - name: city_name
+        description: Name of cities where weather is observed.
+        data_tests:
+          - not_null
+
+      - name: latitude
+        description: value holding latitude of cities
+        data_tests:
+          - not_null
+
+      - name: longitude 
+        description:  longitude of cities 
+        data_tests: 
+          - not_null
+
+      - name: weather_main
+        description: status of sky like clear,clouds,rain etc.
+        data_tests:
+          - not_null
+
+      - name: description
+        description: status of colud how they appear in sky
+        data_tests: 
+          - not_null
+
+      - name: weather_icon
+        description: name of icon based on descrtiprion column
+        data_tests: 
+          - not_null
+
+      - name: feels_like
+        description: temperature in kelvin. Temperature parameter accounts for hunan perception of weather
+        data_tests:
+          - not_null
+      
+      - name: pressure
+        description: Its a atmospheric presure in sea level with unit as hPa(hectopascal)
+        data_tests: 
+          - not_null
+      
+      - name: temperature
+        description: actual measured temperation of cities in kelvin units
+        data_tests: 
+          - not_null
+      
+      - name: grnd_level
+        description: Atmospheric pressure at ground surface level at that location
+        data_tests:
+          - not_null
+      
+      - name: humidity
+        description: Percentage of water vapour in the air at that temperature
+        data_tests: 
+          - not_null
+      
+      - name: sea_level
+        description: Atmospheric pressure adjusted to sea level
+        data_tests:
+          - not_null
+
+      - name: temp_max
+        description: Temperatute that can reach maximun throughout a day, unit kelvin
+        data_tests: 
+          - not_null
+      
+      - name: temp_min
+        description: Temperature that is minimum through out a day, unit kelvin
+        data_tests:
+           - not_null
+
+      - name: visibility
+        description: Distance upto which poin object are visible
+        data_tests:
+          - not_null
+      
+      - name: wind_direction_deg
+        description: Wind direction in degrees 
+        data_tests:
+          - not_null
+      
+      - name: wind_gust
+        description: sudden,short brust of stronger wind, meter/sec unit
+        data_tests:
+          - not_null
+      
+      - name: wind_speed
+        description: Observed wind speed, unit meter/sec
+        data_tests:
+          - not_null
+
+      - name: clouds
+        description: percentage of clouds in the sky
+        data_tests:
+          - not_null
+
+      - name: country_iso2
+        description: two letter country code standard
+        data_tests:
+          - not_null
+
+      - name: timezone_offset
+        description: Difference between the cities local time with utc
+        data_tests:
+          - not_null
+
+      - name: cod
+        description: unknown
+        data_tests:
+          - not_null
+      
+      - name: snow
+        description: snow (if avilable) with unit mm/h
+      
+      - name: rain
+        description: rain (if avilable) with unit mm/h
+      
+      - name: _sunrise_at
+        description: time for sunrise in specific cities unit as unix,utc
+        data_tests: 
+          - not_null
+
+      - name: _sunset_at
+        description: time for sunset in specific cities unit as unix,utc
+        data_tests: 
+          - not_null
+      
+      - name: _measured_at
+        description: time when weather data of cities were measured unit as unix,utc
+        data_tests: 
+          - not_null
+
+      - name: _created_at
+        description: time when weather data of cities is loaded in snowflake timestamp as utc
+        data_tests: 
+          - not_null
+
+  - name: base_healthcare_data
+    description: Is a view of base healthcare data.
+
+

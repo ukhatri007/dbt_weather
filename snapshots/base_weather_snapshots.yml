@@ -1,0 +1,8 @@
+snapshots:
+  - name: base_weather_snapshots
+    relation: ref('base_weather_api_data')
+    config:
+      # schema: snapshots
+      unique_key: unique_key
+      strategy: timestamp
+      updated_at: _created_at
