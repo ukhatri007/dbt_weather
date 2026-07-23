@@ -1,0 +1,9 @@
+models:
+  - name: dim_location
+    description: "dimension table for location data"
+    columns:
+      - name: unique_key
+        description: "unique identifer for each row"
+        data_tests:
+          - not_null
+          - unique
